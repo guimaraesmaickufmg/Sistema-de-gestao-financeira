@@ -99,16 +99,16 @@ void cadastrarProposta(std::vector<Proposta*>& propostas, int& numPropostaAtual)
     std::string nome, descricao, dataAssinatura;
     double valor;
     
-    std::cout << "Digite o nome do cliente: " << std::endl;
+    std::cout << "Insira o nome do cliente: " << std::endl;
     std::cin.get(); //limpar o buff de entrada
     std::getline(std::cin, nome);
     
-    std::cout << std::endl << "Digite a descrição do contrato: " << std::endl;
+    std::cout << std::endl << "Insira a descrição do contrato: " << std::endl;
     std::getline(std::cin, descricao);
     
     std::cout << std::endl;
 
-    std::cout << "Digite o valor total do serviço descrito no contrato:" << std::endl;
+    std::cout << "Insira o valor total do serviço descrito no contrato:" << std::endl;
     std::cin >> valor;
     
     Proposta* c1 = new Proposta(nome, descricao, valor, numPropostaAtual);
@@ -129,11 +129,11 @@ void cadastrarProposta(std::vector<Proposta*>& propostas, int& numPropostaAtual)
 void cadastrarOrdemServico(std::vector<OrdemServico*>& ordens, std::vector<Proposta*>& propostas, int& numOrdemAtual){
     
     std::cout << "Gerar ordem de serviço para qual contrato?" << std::endl
-              << "Digite o N° da proposta do contrato:" << std::endl << std::endl;
+              << "Insira o N° da proposta do contrato:" << std::endl << std::endl;
     int id;
     std::cin >> id;
     
-    std::cout << "Digite a data de assinatura do contrato: " << std::endl;
+    std::cout << "Insira a data de assinatura do contrato: " << std::endl;
 
     std::string dataAssinatura;
     std::cin >> dataAssinatura;
@@ -224,10 +224,10 @@ void encerrarOrdem(std::vector<Engenheiro*>& engenheiros, int idEng){
                         
             aux->printListaTarefas();
             
-            std::cout << "Digite o ID correspondente da ordem a ser encerrada:" << std::endl;
+            std::cout << "Insira o ID correspondente da ordem a ser encerrada:" << std::endl;
             std::cin >> idOrdem;
             std::string data;
-            std::cout << "Digite a data de finalização desse serviço: " << std::endl;
+            std::cout << "Insira a data de finalização desse serviço: " << std::endl;
             std::cin >> data;
             system("clear");
             aux->encerrarTarefa(idOrdem, data);
@@ -319,7 +319,7 @@ void adicionarProposta(std::vector<Orcamentista*>& orcamentistas, std::vector<Pr
         if(idOrcam == aux->getId()){
             
             int idProp;
-            std::cout << "Digite o ID correspondente da proposta:" << std::endl;
+            std::cout << "Insira o ID correspondente da proposta:" << std::endl;
             std::cin >> idProp;
             
             for(auto it2 = propostas.begin(); it2 != propostas.end(); it2++){
